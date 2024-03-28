@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Forniamo i permessi necessari alla nostra app aggiungendo le seguenti linee di codice -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- localizzazione approssimativa (wifi o cella) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- localizzazione precisa (gps) -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- accesso ad internet -->
+
+    <uses-feature android:name="android.hardware.location.network" />
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/icon_mypark"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icon_mypark_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyPark">
+        <activity
+            android:name=".FavouritesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SecondActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
